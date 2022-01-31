@@ -14,12 +14,12 @@ function Searchbar() {
     setQuery(event.currentTarget.value.toLowerCase());
   };
 
-  const searchMovies = () => {
-    return API.fetchSearch(query)
-      .then((response) => [...movies, ...response.results])
-      .then(setMovies)
-      .catch(handleError);
-  };
+  // const searchMovies = () => {
+  //   return API.fetchSearch(query)
+  //     .then((response) => [...movies, ...response.results])
+  //     .then(setMovies)
+  //     .catch(handleError);
+  // };
   const handleError = () => {
     return toast.error("Oh my gach!! There is nothing here!");
   };

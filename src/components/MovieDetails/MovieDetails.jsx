@@ -49,10 +49,7 @@ export default function MovieDetails({ movie }) {
         </NavLink>
       </MovieThumb>
       <hr />
-      <Routes>
-        <Route path=":reviews" element={<div>lol</div>} />
-        <Route path=":cast" element={<div>hello</div>} />
-      </Routes>
+
       <Outlet />
     </>
   );

@@ -1,19 +1,21 @@
 import Searchbar from "../components/Searchbar";
 import Movies from "../components/Movies/Movies";
 import { useState, useEffect } from "react";
-import * as API from "../utils/API";
 
-export default function Search(query) {
+export default function Search() {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
-    setFilms(films);
+    setFilms();
   }, [films]);
 
-  return (
-    <>
-      <Searchbar />
-      {films && <Movies films={films} />}
-    </>
-  );
+  return <>{!films ? <Searchbar /> : <Movies films={films} />}</>;
+
+  // return (
+  //   <>
+  //     <Searchbar />
+  //     {films && <Movies films={films} />}
+
+  //   </>
+  // );
 }
