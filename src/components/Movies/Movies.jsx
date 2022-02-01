@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { MovieList, ListItem, Movie, Title } from "./Movies.styled";
 import { Link } from "react-router-dom";
 
@@ -7,6 +7,7 @@ export default function Movies({ films }) {
 
   return (
     <>
+      <Outlet />
       <MovieList>
         {films &&
           films.map(({ id, title, poster_path }) => (

@@ -1,15 +1,16 @@
 import Searchbar from "../components/Searchbar";
 import Movies from "../components/Movies/Movies";
 import { useState, useEffect } from "react";
+import MovieDetails from "../components/MovieDetails/MovieDetails";
 
-export default function Search() {
+export default function Search(movieId) {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
     setFilms();
   }, [films]);
 
-  // return <>{!films ? <Movies films={films} /> : <Searchbar />}</>;
+  // return <>{!films <Searchbar />:<Movies films={films} />}</>;
 
   return (
     <>

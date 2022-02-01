@@ -8,20 +8,21 @@ export default function Reviews() {
   const { movieId } = useParams();
 
   useEffect(() => {
-    return API.fetchReviews(movieId).then((response) =>
-      setReviews(...response.results)
-    );
-  }, []);
+    return API.fetchReviews(movieId).then(({ results }) => setReviews(results));
+  }, [movieId]);
 
   return (
     <List>
-      {reviews &&
-        reviews.map(({ id, author, content }) => (
-          <Item key={id}>
-            <Author>{author}</Author>
-            <Content>{content}</Content>
+      {reviews.length > 0 ? (
+        reviews.map((results) => (
+          <Item key={results.id}>
+            <Author>{results.author}</Author>
+            <Content>{results.content}</Content>
           </Item>
-        ))}
+        ))
+      ) : (
+        <>No reviews for this moovie</>
+      )}
     </List>
   );
 }
