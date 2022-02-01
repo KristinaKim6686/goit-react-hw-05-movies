@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const MovieThumb = styled.div``;
+export const MovieThumb = styled.div`
+  margin-top: 20px;
+`;
 
 export const Movie = styled.img`
   width: 100%;
@@ -16,6 +18,10 @@ export const Movie = styled.img`
 export const Title = styled.h3``;
 export const GenresList = styled.ul`
   list-style: none;
+`;
+export const Wraper = styled.div`
+  display: inline-block;
+  padding: 15px;
 `;
 
 export const Rate = styled.p``;

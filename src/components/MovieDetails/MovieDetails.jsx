@@ -8,6 +8,7 @@ import {
   Rate,
   Overview,
   Runtime,
+  Wraper,
 } from "./MovieDetails.styled";
 import { Button } from "../Searchbar/Searchbar.styled";
 
@@ -34,20 +35,24 @@ export default function MovieDetails({ movie }) {
         <Rate>Rate: {movie.vote_average}</Rate>
         <Runtime>Runtime: {movie.runtime}</Runtime>
         <Overview>{movie.overview}</Overview>
-        <NavLink
-          to={`cast`}
-          activeStyle={{ color: "red" }}
-          style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
-        >
-          Cast
-        </NavLink>
-        <NavLink
-          to={`reviews`}
-          activeStyle={{ color: "red" }}
-          style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
-        >
-          Reviews
-        </NavLink>
+        <Wraper>
+          <NavLink
+            to={`cast`}
+            activeStyle={{ color: "red" }}
+            style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
+          >
+            Cast
+          </NavLink>
+        </Wraper>
+        <Wraper>
+          <NavLink
+            to={`reviews`}
+            activeStyle={{ color: "red" }}
+            style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
+          >
+            Reviews
+          </NavLink>
+        </Wraper>
       </MovieThumb>
       <hr />
 

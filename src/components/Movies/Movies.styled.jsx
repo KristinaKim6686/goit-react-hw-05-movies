@@ -30,4 +30,7 @@ export const Movie = styled.img`
     cursor: zoom-in;
   }
 `;
-export const Title = styled.h3``;
+export const Title = styled.h3`
+  text-decoration: none;
+  padding: 10px;
+`;
