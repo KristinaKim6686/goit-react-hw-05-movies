@@ -5,6 +5,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import * as API from "../../utils/API";
 import { Outlet } from "react-router-dom";
+import Movies from "../Movies/Movies";
 
 function Searchbar() {
   const [movies, setMovies] = useState([]);
@@ -14,31 +15,28 @@ function Searchbar() {
     setQuery(event.currentTarget.value.toLowerCase());
   };
 
-  // const searchMovies = () => {
-  //   return API.fetchSearch(query)
-  //     .then((response) => [...movies, ...response.results])
-  //     .then(setMovies)
-  //     .catch(handleError);
-  // };
+  const searchMovies = () => {
+    return API.fetchSearch(query)
+      .then((response) => [...response.results])
+      .then(setMovies)
+      .catch(handleError);
+  };
   const handleError = () => {
     return toast.error("Oh my gach!! There is nothing here!");
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    setMovies([]);
     if (query.trim() === "") {
       return toast.error("Try to enter something");
     }
-    handleFormSubmit(query);
-    setQuery("");
-    console.log(query);
-  };
-  const handleFormSubmit = (query) => {
-    setQuery(query);
-    setMovies([]);
+    // handleFormSubmit(query);
     if (query !== "") {
       searchMovies(query);
     }
+    setQuery("");
   };
+
   return (
     <>
       <Header>
@@ -56,6 +54,7 @@ function Searchbar() {
         </Form>
         <ToastContainer autoClose={2000} />
       </Header>
+      <Movies films={movies} />
       <Outlet />
     </>
   );

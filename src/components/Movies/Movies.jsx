@@ -10,7 +10,7 @@ export default function Movies({ films }) {
       <MovieList>
         {films &&
           films.map(({ id, title, poster_path }) => (
-            <Link to={`movies/${id}`} state={{ from: location }} key={id}>
+            <Link to={`/movies/${id}`} state={{ from: location }} key={id}>
               <ListItem key={id}>
                 <Movie
                   src={`https://image.tmdb.org/t/p/w500${poster_path}`}

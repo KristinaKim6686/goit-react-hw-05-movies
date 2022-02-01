@@ -17,8 +17,8 @@ function App() {
         <Route path="/" element={<Trending />} />
         <Route path="movies" element={<Search />}>
           <Route path=":movieId" element={<Details />}>
-            <Route path=":reviews" element={<Reviews />} />
-            <Route path=":cast" index element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="cast" index element={<Cast />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFound />} />

@@ -9,13 +9,12 @@ export default function Search() {
     setFilms();
   }, [films]);
 
-  return <>{!films ? <Searchbar /> : <Movies films={films} />}</>;
+  // return <>{!films ? <Movies films={films} /> : <Searchbar />}</>;
 
-  // return (
-  //   <>
-  //     <Searchbar />
-  //     {films && <Movies films={films} />}
-
-  //   </>
-  // );
+  return (
+    <>
+      <Searchbar />
+      {films && <Movies films={films} />}
+    </>
+  );
 }

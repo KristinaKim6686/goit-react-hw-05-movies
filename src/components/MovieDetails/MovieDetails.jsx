@@ -26,9 +26,10 @@ export default function MovieDetails({ movie }) {
         />
         <Title>{movie.title}</Title>
         <GenresList>
-          {/* {movie.genres.map((genre) => (
-          <Genre key={genre.id}>{genre.name}</Genre>
-        ))} */}
+          {movie.genres &&
+            movie.genres.map((genre) => (
+              <Genre key={genre.id}>{genre.name}</Genre>
+            ))}
         </GenresList>
         <Rate>Rate: {movie.vote_average}</Rate>
         <Runtime>Runtime: {movie.runtime}</Runtime>
